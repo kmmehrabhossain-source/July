@@ -1,0 +1,714 @@
+/* Beautiful Martyrs Page with Revolutionary Theme */
+
+.martyrs-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8B0000 0%, #DC143C 50%, #B22222 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Revolutionary Background Elements */
+.revolutionary-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  animation: subtlePatternFloat 90s ease-in-out infinite;
+}
+
+.floating-elements {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-star {
+  position: absolute;
+  color: rgba(255, 215, 0, 0.4);
+  font-size: 1.5rem;
+  animation: subtleFloat 25s ease-in-out infinite;
+}
+
+.floating-star:nth-child(1) {
+  top: 15%;
+  left: 10%;
+}
+
+.floating-star:nth-child(2) {
+  top: 70%;
+  right: 15%;
+}
+
+.floating-star:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+}
+
+/* Header Styles */
+.martyrs-header {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.3);
+  position: relative;
+  z-index: 10;
+  padding: 20px 0;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.header-content h1 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.header-content h2 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  color: #8B0000;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Main Content */
+.martyrs-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.martyrs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+/* Martyr Card */
+.martyr-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.martyr-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.martyr-card:hover::before {
+  left: 100%;
+}
+
+.martyr-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.martyr-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.martyr-icon {
+  font-size: 3rem;
+  animation: subtlePulse 8s ease-in-out infinite;
+}
+
+.martyr-info {
+  flex: 1;
+}
+
+.martyr-name {
+  font-size: 1.5rem;
+  color: #8B0000;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.martyr-english-name {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0 0 5px 0;
+  font-weight: 600;
+}
+
+.martyr-date {
+  font-size: 0.9rem;
+  color: #DC143C;
+  margin: 0;
+  font-weight: 600;
+}
+
+.martyr-quote {
+  margin: 25px 0;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(220, 20, 60, 0.1));
+  border-left: 4px solid #DC143C;
+  border-radius: 0 15px 15px 0;
+}
+
+.martyr-quote blockquote {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.martyr-description {
+  margin: 20px 0;
+}
+
+.martyr-description p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.martyr-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid rgba(139, 0, 0, 0.2);
+}
+
+.martyr-status {
+  background: linear-gradient(135deg, #DC143C, #8B0000);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.martyr-status-en {
+  color: #666;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+/* Footer */
+.martyrs-footer {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(15px);
+  border-top: 2px solid rgba(255, 215, 0, 0.3);
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  margin-top: 50px;
+}
+
+.footer-content p {
+  color: white;
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.footer-content p:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-btn, .admin-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #DC143C, #8B0000);
+  color: white;
+}
+
+.admin-btn {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #333;
+}
+
+.submit-btn:hover, .admin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Submit Form */
+.submit-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.submit-form-container {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.submit-form-container h3 {
+  text-align: center;
+  color: #8B0000;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.submit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #DC143C;
+  box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Admin Panel */
+.admin-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.admin-panel {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.admin-panel h3 {
+  text-align: center;
+  color: #8B0000;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.admin-martyrs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-martyr-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 20px;
+  border: 2px solid rgba(139, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.martyr-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.approve-btn, .reject-btn, .delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.approve-btn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.reject-btn {
+  background: linear-gradient(135deg, #dc3545, #fd7e14);
+  color: white;
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: white;
+}
+
+.approve-btn:hover, .reject-btn:hover, .delete-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Submissions Section */
+.submissions-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.submissions-section h3 {
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.submissions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.submission-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.submission-card.pending {
+  border-color: #FFA500;
+}
+
+.submission-card.approved {
+  border-color: #28a745;
+}
+
+.submission-card.rejected {
+  border-color: #dc3545;
+}
+
+.submission-card h4 {
+  color: #8B0000;
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.submission-card p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  color: white;
+  font-size: 1.2rem;
+  padding: 40px;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.empty-content h3 {
+  color: #8B0000;
+  font-size: 1.8rem;
+  margin: 0 0 20px 0;
+  font-weight: bold;
+}
+
+.empty-content p {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+}
+
+.empty-content .submit-btn {
+  background: linear-gradient(135deg, #DC143C, #8B0000);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.empty-content .submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced Martyr Card */
+.martyr-details {
+  margin: 20px 0;
+}
+
+.martyr-details h5 {
+  color: #8B0000;
+  margin: 15px 0 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.martyr-details p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+  font-size: 0.9rem;
+}
+
+.martyr-location {
+  font-size: 0.9rem;
+  color: #DC143C;
+  margin: 5px 0 0 0;
+  font-weight: 600;
+}
+
+/* Animation Keyframes */
+@keyframes subtlePatternFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-1px) rotate(0.1deg); }
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-2px); opacity: 0.45; }
+}
+
+@keyframes subtlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .martyrs-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .martyr-card {
+    padding: 25px;
+  }
+  
+  .martyr-name {
+    font-size: 1.3rem;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .admin-martyr-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .martyr-actions {
+    justify-content: center;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 40px 15px;
+  }
+  
+  .hero-content {
+    padding: 30px 20px;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.4rem;
+  }
+  
+  .martyrs-main {
+    padding: 30px 15px;
+  }
+  
+  .martyr-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .martyr-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .submit-form-container,
+  .admin-panel {
+    padding: 25px 20px;
+  }
+}
